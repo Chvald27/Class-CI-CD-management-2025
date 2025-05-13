@@ -30,9 +30,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
-      
     - name: Show current date and time
       run: date
-      
     - name: List files in the working directory
       run: ls -la
