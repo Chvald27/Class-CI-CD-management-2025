@@ -1,0 +1,26 @@
+# .github/workflows/New-ci.yml
+name: Basic CI Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print greeting
+        run: echo "👋 Hello from GitHub Actions!"
+
+      - name: Show current date and time
+        run: date
+
+      - name: Show system info
+        run: uname -a
+
+      - name: List workspace files
+        run: ls -la

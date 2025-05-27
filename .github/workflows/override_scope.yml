@@ -1,0 +1,27 @@
+name: Override Variable Scope Test
+
+env:
+  SHARED_VARIABLE: "Workflow Level Value"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  override-test:
+    runs-on: ubuntu-latest
+
+    env:
+      SHARED_VARIABLE: "Job Level Value"
+
+    steps:
+      - name: Step with overridden SHARED_VARIABLE
+        env:
+          SHARED_VARIABLE: "Step Level Value"
+        run: |
+          echo "SHARED_VARIABLE is: $SHARED_VARIABLE"
+
+      - name: Step without override
+        run: |
+          echo "SHARED_VARIABLE is: $SHARED_VARIABLE"
