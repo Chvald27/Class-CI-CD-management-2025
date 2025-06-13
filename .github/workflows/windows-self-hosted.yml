@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-windows:
-    runs-on: self-hosted
+    runs-on: self-hosted, Windows, X64
     # To specifically target Windows runners:
     # runs-on: [self-hosted, Windows]
 

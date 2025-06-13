@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-linux:
-    runs-on: self-hosted
+    runs-on: self-hosted, Linux, ARM64
     # If you want to specifically target Linux runners only:
     # runs-on: [self-hosted, Linux]
 
