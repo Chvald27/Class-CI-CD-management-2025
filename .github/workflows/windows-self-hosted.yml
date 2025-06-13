@@ -1,0 +1,23 @@
+name: Windows Self-Hosted Runner Demo
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: self-hosted
+    # To specifically target Windows runners:
+    # runs-on: [self-hosted, Windows]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run systeminfo to verify Windows runner
+        run: systeminfo
+
+      - name: Run a simple Windows command
+        run: |
+          echo Running on Windows self-hosted runner!
+          dir

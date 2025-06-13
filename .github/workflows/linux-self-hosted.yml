@@ -1,0 +1,24 @@
+name: Linux Self-Hosted Runner Demo
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-linux:
+    runs-on: self-hosted
+    # If you want to specifically target Linux runners only:
+    # runs-on: [self-hosted, Linux]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run uname to verify Linux runner
+        run: uname -a
+
+      - name: Run a simple Linux command
+        run: |
+          echo "Running on Linux self-hosted runner!"
+          ls -lah
+
